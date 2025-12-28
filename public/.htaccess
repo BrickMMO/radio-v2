@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /index.php [L,QSA]
+
+<Files .env>
+order allow,deny
+Deny from all
+</Files>
